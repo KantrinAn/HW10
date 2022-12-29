@@ -1,28 +1,44 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class HomeWork10 {
     public static void main(String[] args) {
-        int[] arr1 = new int[10];
-        int[] arr2 = new int[10];
+        int[] arr1 = new int[7];
+        int[] arr2 = new int[7];
         int count = 0;
-        Random random = new Random();
-        String stringArr1 = " ";
-        String stringArr2 = " ";
 
-        for (int i = 0; i < 10; i++) {
-            stringArr1 += " " + (arr1[i] = random.nextInt(10));
-            stringArr2 += " " + (arr2[i] = random.nextInt(10));
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = (int) (Math.random() * 9);
+
+        }
+        for (int j = 0; j < arr2.length; j++) {
+            arr2[j] = (int) (Math.random() * 9);
+
+        }
+        for (int i =0; i< arr1.length; i++) {
+            Arrays.sort(arr1);
+            System.out.print(arr1[i] + " ");
+        }
+        System.out.println();
+        for (int j = 0;j< arr2.length; j++) {
+            Arrays.sort(arr2);
+            System.out.print(arr2[j]+ " ");
         }
 
-        System.out.println(stringArr1);
-        System.out.println(stringArr2);
-        for (int i = arr2[0]; i < arr1.length - 1; i++) {
-            for (int j = arr1[0]; j < arr2.length - 1; j++) {
-                if (arr1[i] == arr2[j]) {
-                    count ++;
-                    System.out.println("Кількість співпадінь " + count +" ");
-                }
+       for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] == arr2[i]) {
+                count++;
+                System.out.println("Кількість співпадінь " + count + " ");
+
+      }
+
+
             }
         }
     }
-}
+
+
+
+
+
+
